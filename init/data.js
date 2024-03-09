@@ -1,4 +1,4 @@
-const sampleListings = [
+const sampleListings = [ 
     {
       title: "Modern Loft in Downtown",
       description:

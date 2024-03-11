@@ -1,6 +1,6 @@
 <% layout('./layouts/boilerplate') -%>
   <style>
-    .filters{
+    .filters {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -10,26 +10,30 @@
       background-color: white;
       z-index: 100;
     }
-    .content1{
+
+    .content1 {
       margin-top: 1rem;
       display: flex;
       align-items: center;
       margin-left: 10px;
     }
-    .filter{
+
+    .filter {
       text-align: center;
       margin-right: 30px;
       cursor: pointer;
     }
-    .filter p{
+
+    .filter p {
       font-size: 10px;
     }
-    .card-img-top{
+
+    .card-img-top {
       object-fit: cover;
       object-position: top;
     }
 
-    .content2{
+    .content2 {
       padding: 0px 15px;
       border: 1px solid black;
       border-radius: 1rem;
@@ -39,23 +43,51 @@
       align-items: center;
       height: 55px;
     }
+
+    .card-text {
+      margin-bottom: 0.2rem;
+    }
   </style>
 
   <body>
     <div class="filters">
       <div class="content1">
-        <div class="filter"><i class="fa-solid fa-fire"></i><p>Trending</p></div>
-        <div class="filter"><i class="fa-regular fa-snowflake"></i><p>Arctic</p></div>
-        <div class="filter"><i class="fa-solid fa-tree"></i><p>Island</p></div>
-        <div class="filter"><i class="fa-solid fa-pen-fancy"></i><p>Design</p></div>
-        <div class="filter"><i class="fa-solid fa-shield-dog"></i><p>Cabin</p></div>
-        <div class="filter"><i class="fa-solid fa-rss"></i><p>New</p></div>
-        <div class="filter"><i class="fa-solid fa-hospital"></i><p>Rooms</p></div>
-        <div class="filter"><i class="fa-solid fa-person-pregnant"></i><p>Natoional Park</p></div>
-        <div class="filter"><i class="fa-solid fa-tower-cell"></i><p>Caves</p></div>
-        <div class="filter"><i class="fa-solid fa-mountain-sun"></i><p>Mountains</p></div>
-        <div class="filter"><i class="fa-solid fa-tents"></i><p>Shelters</p></div>
-        <div class="filter"><i class="fa-solid fa-city"></i><p>Iconic Cities</p></div>
+        <div class="filter"><i class="fa-solid fa-fire"></i>
+          <p>Trending</p>
+        </div>
+        <div class="filter"><i class="fa-regular fa-snowflake"></i>
+          <p>Arctic</p>
+        </div>
+        <div class="filter"><i class="fa-solid fa-tree"></i>
+          <p>Island</p>
+        </div>
+        <div class="filter"><i class="fa-solid fa-pen-fancy"></i>
+          <p>Design</p>
+        </div>
+        <div class="filter"><i class="fa-solid fa-shield-dog"></i>
+          <p>Cabin</p>
+        </div>
+        <div class="filter"><i class="fa-solid fa-rss"></i>
+          <p>New</p>
+        </div>
+        <div class="filter"><i class="fa-solid fa-hospital"></i>
+          <p>Rooms</p>
+        </div>
+        <div class="filter"><i class="fa-solid fa-person-pregnant"></i>
+          <p>Natoional Park</p>
+        </div>
+        <div class="filter"><i class="fa-solid fa-tower-cell"></i>
+          <p>Caves</p>
+        </div>
+        <div class="filter"><i class="fa-solid fa-mountain-sun"></i>
+          <p>Mountains</p>
+        </div>
+        <div class="filter"><i class="fa-solid fa-tents"></i>
+          <p>Shelters</p>
+        </div>
+        <div class="filter"><i class="fa-solid fa-city"></i>
+          <p>Iconic Cities</p>
+        </div>
       </div>
       <div class="content2">
         <div class="form-check form-switch form-check-reverse">
@@ -64,24 +96,22 @@
         </div>
       </div>
     </div>
-      <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
-        <% for(let listing of allListings) { %>
-          <a href="/listings/<%= listing._id %>">
-            <div class="card col listing-card">
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+      <% for(let listing of allListings) { %>
+        <a href="/listings/<%= listing._id %>">
+          <div class="card col listing-card">
 
-                <img src="<%= listing.image.url %>"
-                 class="card-img-top"
-                  alt="listing"
-                  style="height: 20rem; width: 100%;"
-                >
-              <div class="card-img-overlay"></div>
-              <div class="card-body">
-                <p class="card-text"> <b><%= listing.title %></b></p>
-                <p class="card-price">&#8377; <%= listing.price.toLocaleString("en-IN") %> / Night</p>
-              </div>
+            <img src="<%= listing.image.url %>" class="card-img-top" alt="listing" style="height: 20rem; width: 100%;">
+            <div class="card-img-overlay"></div>
+            <div class="card-body">
+              <p class="card-text"> <b>
+                  <%= listing.title %>
+                </b></p>
+              <p class="card-price">&#8377; <%= listing.price.toLocaleString("en-IN") %> / Night</p>
             </div>
-          </a>
+          </div>
+        </a>
         <% } %>
-      </div>
+    </div>
 
   </body>

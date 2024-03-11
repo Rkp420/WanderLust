@@ -124,6 +124,8 @@ footer{
     height: 25rem;
     width: 100%;
     border-radius: 1.05rem;
+    object-fit: cover;
+    object-position:top;
 }
 .context{
     margin-top: 12px;
@@ -151,10 +153,11 @@ footer{
     margin: 10px 10px !important;
 }
 
-.reviewimage img{
+.reviewimage .editPageImage{
     height: 115px;
     width: 180px;
     display: block;
+    object-fit: cover;
 }
 
 /* map */
